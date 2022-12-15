@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="39.635">
+    <testcase classname="signup popup feature" name="test popup apearnes" time="37.659">
+        <system-out><![CDATA[Given open browser..........................................................passed
+And enter url...............................................................passed
+When click signup tab.......................................................passed
+And signin screen popup.....................................................passed
+When click without data.....................................................passed
+And accept the alert........................................................passed
+When enter data.............................................................passed
+And click signup button.....................................................passed
+When fail...................................................................passed
+And retype data.............................................................passed
+Then success................................................................passed
+]]></system-out>
+    </testcase>
+</testsuite>
