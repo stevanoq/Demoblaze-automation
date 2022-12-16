@@ -1,5 +1,5 @@
 Feature: signup popup feature
-    @signupPopup
+    @signup
     Scenario: test popup apearnes
         Given open browser
         And enter url

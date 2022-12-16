@@ -7,8 +7,8 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resource/Features", glue={"StepDefinitions"},
 monochrome = true,
-plugin = {"pretty", "junit:target/junitReport/report.xml"}//,
-//tags = "@signupPopup"
+plugin = {"pretty", "junit:target/junitReport/report.xml"}
+//tags = "@signup"
 )
 public class TestRunner{
 

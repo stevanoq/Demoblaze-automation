@@ -14,9 +14,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pagesLocator.signup_page;
 
-public class signupPopup {
+public class T01_signup {
     WebDriver driver = null;
+    signup_page signup;
     /*Given open browser
         And enter url
         When click signin button
@@ -35,43 +37,50 @@ public class signupPopup {
     }
 
     @When("click signup tab")
-    public void click_signup_tab(){
-        driver.findElement(ByName.id("signin2")).click();
+    public void click_signup_tab() throws InterruptedException{
+        signup = new signup_page(driver);
+        signup.click_sigup_tab();
+        signup.click_sigup_closeButton();
+        //driver.findElement(ByName.id("signin2")).isDisplayed();
+        signup.click_sigup_tab();
+        signup.click_sigup_xButton();
+        //driver.findElement(ByName.id("signin2")).isDisplayed();
+        signup.click_sigup_tab();
     }
 
     @And("signin screen popup")
     public void signin_screen_popup(){
-        driver.findElement(ById.id("sign-username"));   
+        driver.findElement(ById.id("sign-username")).isDisplayed();   
     }
 
     @When("click without data")
     public void click_without_data() throws InterruptedException{
-        driver.findElement(ByXPath.xpath("//*[@id='signInModal']/div/div/div[3]/button[2]")).click();
-        Thread.sleep(5000);
+        signup.click_sigup_button();
+        Thread.sleep(2000);
     }
 
     @And("accept the alert")
     public void accept_the_alert(){
-        driver.switchTo().alert().accept();
+        signup.signup_alert_accept();
     }
 
     @When("enter data")
     public void enter_data(){
-        driver.findElement(ById.id("sign-username")).sendKeys("evan");
-        driver.findElement(ById.id("sign-password")).sendKeys("12345678");
+        signup.enter_sigup_oldname();
+        signup.enter_sigup_password();
     }
 
     @And("click signup button")
     public void click_signup_button() throws InterruptedException{
-        driver.findElement(ByXPath.xpath("//*[@id='signInModal']/div/div/div[3]/button[2]")).click();
-        Thread.sleep(5000);
+        signup.click_sigup_button();
+        Thread.sleep(2000);
     }
 
     @When("fail")
     public void fail() throws InterruptedException{
-        Alert alert = driver.switchTo().alert();
-        //Thread.sleep(5000);
-        alert.accept();
+        String txt=driver.switchTo().alert().getText().toString();
+        System.out.println(txt);
+        signup.signup_alert_accept();
     }
 
     @And("retype data")
@@ -79,14 +88,16 @@ public class signupPopup {
         driver.findElement(ById.id("sign-username")).clear();
         driver.findElement(ById.id("sign-password")).clear();
         Thread.sleep(2000);
-        driver.findElement(ById.id("sign-username")).sendKeys("evan1240");
-        driver.findElement(ById.id("sign-password")).sendKeys("1234567890");
+        signup.enter_sigup_newname();
+        signup.enter_sigup_password();
     }
 
     @Then("success")
     public void success() throws InterruptedException{
-        driver.findElement(ByXPath.xpath("//*[@id='signInModal']/div/div/div[3]/button[2]")).click();
+        signup.click_sigup_button();
         Thread.sleep(2000);
-        driver.switchTo().alert().accept();
+        signup.signup_alert_accept();
+        driver.close();
+        driver.quit();
     }
 }

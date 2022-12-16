@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="39.635">
-    <testcase classname="signup popup feature" name="test popup apearnes" time="37.659">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="84.141">
+    <testcase classname="signup popup feature" name="test popup apearnes" time="38.76">
         <system-out><![CDATA[Given open browser..........................................................passed
 And enter url...............................................................passed
 When click signup tab.......................................................passed
@@ -12,6 +12,27 @@ And click signup button.....................................................pass
 When fail...................................................................passed
 And retype data.............................................................passed
 Then success................................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="login feature" name="login testing feature" time="25.841">
+        <system-out><![CDATA[Given open browser login....................................................passed
+And goto url login..........................................................passed
+When click login tab........................................................passed
+And click login without cridential..........................................passed
+When enter wrong cridential.................................................passed
+And fail login..............................................................passed
+When not enter password.....................................................passed
+And fail login1.............................................................passed
+When enter right cridential.................................................passed
+Then success login..........................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="logout testing" name="logout fucyionality testing" time="17.479">
+        <system-out><![CDATA[Given logout open browser...................................................passed
+And logout navigate to web..................................................passed
+When user login.............................................................passed
+And successfuly login.......................................................passed
+Then logout.................................................................passed
 ]]></system-out>
     </testcase>
 </testsuite>
