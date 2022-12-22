@@ -95,7 +95,7 @@ public class cart_page {
     }
 
     public void enter_card(){
-        cart_tab.sendKeys("2314352425");
+        card_txt.sendKeys("2314352425");
     }
 
     public void enter_month(){

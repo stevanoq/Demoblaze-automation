@@ -50,30 +50,30 @@ public class home_page {
     
     public void add_to_cart_phones(String phone_name) throws InterruptedException{
         driver.findElement(ByXPath.xpath("//a[normalize-space()='" + phone_name + "']" )).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         click_add_to_cart();
         driver.switchTo().alert().accept();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         click_home_tab();
         click_phone();
     }
 
     public void add_to_cart_laptops(String laptop_name) throws InterruptedException{
         driver.findElement(ByXPath.xpath("//a[normalize-space()='" + laptop_name + "']" )).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         click_add_to_cart();
         driver.switchTo().alert().accept();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         click_home_tab();
         click_laptop();
     }
 
     public void add_to_cart_monitors(String monitors_name) throws InterruptedException{
         driver.findElement(ByXPath.xpath("//a[normalize-space()='" + monitors_name + "']" )).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         click_add_to_cart();
         driver.switchTo().alert().accept();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         click_home_tab();
         click_monitor();
     }
