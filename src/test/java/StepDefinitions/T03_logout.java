@@ -11,28 +11,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pagesLocator.logout_pf;
 
-public class T03_logout {
-    WebDriver driver = null;
-    logout_pf logout;
+public class T03_logout extends variable{
+    
     /*Given logout open browser
         And logout navigate to web
         When user login
         And successfuly login
         Then logout */
-
-        @Given("logout open browser")
-        public void logout_open_browser(){
-            System.setProperty("webdriver.chrome.driver",
-                "/home/evan/Documents/MavenProjects/testing/src/test/resource/Drivers/chromedriver");
-            driver = new ChromeDriver();
-            driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-            driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-        }
-
-        @And("logout navigate to web")
-        public void logout_navigate_to_web(){
-            driver.navigate().to("https://www.demoblaze.com/");
-        }
 
         @When("user login")
         public void user_login() throws InterruptedException{
@@ -43,18 +28,16 @@ public class T03_logout {
             logout.enter_password_logout();
             logout.click_logout_in_btn();
 
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         }
 
-        @And("successfuly login")
+        @And("logout")
         public void successfuly_login(){
             logout.click_logout_tab();
         }
 
-        @Then("logout")
+        @Then("successfuly login")
         public void logout(){
-            logout.verify_logout();
-            driver.close();
-            driver.quit();
+            logout.verify_logout();            
         }
 }

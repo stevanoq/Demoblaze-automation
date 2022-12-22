@@ -8,15 +8,14 @@ import org.openqa.selenium.By.ById;
 import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pagesLocator.login_page;
 
-public class T02_login {
-    WebDriver driver = null;
-    login_page login;
+public class T02_login extends variable{
 
     /*
      * Given open browser
@@ -30,28 +29,32 @@ public class T02_login {
      * When enter right cridential
      * Then success
      */
-    @Given("open browser login")
+    /*@Given("open browser login")
     public void open_browser_login() {
         System.setProperty("webdriver.chrome.driver",
                 "/home/evan/Documents/MavenProjects/testing/src/test/resource/Drivers/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-    }
+    }*/
 
-    @And("goto url login")
+    /*@And("goto url login")
     public void goto_url_login() {
         driver.navigate().to("https://www.demoblaze.com/");
-    }
+    } */
 
     @When("click login tab")
-    public void click_login_tab() {
+    public void click_login_tab() throws InterruptedException {
         login = new login_page(driver);
 
         login.click_login_tab();
+        Thread.sleep(1000);
         login.click_btn_close();
+        Thread.sleep(1000);
         login.click_login_tab();
+        Thread.sleep(1000);
         login.click_btn_x();
+        Thread.sleep(1000);
         login.click_login_tab();
     }
 
@@ -99,7 +102,9 @@ public class T02_login {
     @Then("success login")
     public void success_login() {
         driver.findElement(By.id("nameofuser")).isDisplayed();
-        driver.close();
-        driver.quit();
+        // driver.close();
+        // driver.quit();
     }
+
+    
 }

@@ -10,29 +10,28 @@ import org.openqa.selenium.By.ByName;
 import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pagesLocator.signup_page;
 
-public class T01_signup {
-    WebDriver driver = null;
-    signup_page signup;
+public class T01_signup extends variable{
+    //signup_page signup;
     /*Given open browser
         And enter url
         When click signin button
         Then sigin screen popup */
-    @Given("open browser")
+    //@Given("open browser")
+    @Before
     public void open_browser(){
         System.setProperty("webdriver.chrome.driver", "/home/evan/Documents/MavenProjects/testing/src/test/resource/Drivers/chromedriver");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-    }
-
-    @And("enter url")
-    public void enter_url(){
+        driver.manage().window().maximize();
         driver.navigate().to("https://www.demoblaze.com/");
     }
 
@@ -97,6 +96,11 @@ public class T01_signup {
         signup.click_sigup_button();
         Thread.sleep(2000);
         signup.signup_alert_accept();
+        
+    }
+
+    @After
+    public void close_browser(){
         driver.close();
         driver.quit();
     }

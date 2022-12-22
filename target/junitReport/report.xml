@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="84.141">
-    <testcase classname="signup popup feature" name="test popup apearnes" time="38.76">
-        <system-out><![CDATA[Given open browser..........................................................passed
-And enter url...............................................................passed
-When click signup tab.......................................................passed
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="452.418">
+    <testcase classname="signup popup feature" name="test popup apearnes" time="43.07">
+        <system-out><![CDATA[When click signup tab.......................................................passed
 And signin screen popup.....................................................passed
 When click without data.....................................................passed
 And accept the alert........................................................passed
@@ -14,10 +12,8 @@ And retype data.............................................................pass
 Then success................................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="login feature" name="login testing feature" time="25.841">
-        <system-out><![CDATA[Given open browser login....................................................passed
-And goto url login..........................................................passed
-When click login tab........................................................passed
+    <testcase classname="login feature" name="login testing feature" time="29.01">
+        <system-out><![CDATA[When click login tab........................................................passed
 And click login without cridential..........................................passed
 When enter wrong cridential.................................................passed
 And fail login..............................................................passed
@@ -27,12 +23,148 @@ When enter right cridential.................................................pass
 Then success login..........................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="logout testing" name="logout fucyionality testing" time="17.479">
-        <system-out><![CDATA[Given logout open browser...................................................passed
-And logout navigate to web..................................................passed
-When user login.............................................................passed
-And successfuly login.......................................................passed
-Then logout.................................................................passed
+    <testcase classname="logout testing" name="logout fucyionality testing" time="20.002">
+        <system-out><![CDATA[When user login.............................................................passed
+And logout..................................................................passed
+Then successfuly login......................................................passed
 ]]></system-out>
+    </testcase>
+    <testcase classname="about us" name="test about us" time="25.53">
+        <system-out><![CDATA[When user login.............................................................passed
+And click about us tab......................................................passed
+When check close and x btn..................................................passed
+And verify video............................................................passed
+Then successfuly login......................................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="contact us" name="testing contact us function" time="29.963">
+        <failure message="element click intercepted: Element &lt;a class=&quot;nav-link&quot; data-toggle=&quot;modal&quot; data-target=&quot;#exampleModal&quot; href=&quot;#&quot;&gt;...&lt;/a&gt; is not clickable at point (725, 37). Other element would receive the click: &lt;div class=&quot;modal-header&quot;&gt;...&lt;/div&gt;&#10;  (Session info: chrome=107.0.5304.110)&#10;Build info: version: '4.7.2', revision: '4d4020c3b7'&#10;System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.5'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [1994459179a7b0beb0c4235b61e22468, clickElement {id=b94d2b0b-c957-4e4f-93e9-9e08b2f147b9}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.110, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /tmp/.com.google.Chrome.eF7Q9B}, goog:chromeOptions: {debuggerAddress: localhost:39503}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:39503/devtoo..., se:cdpVersion: 107.0.5304.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on LINUX (1994459179a7b0beb0c4235b61e22468)] -&gt; xpath: /html[1]/body[1]/nav[1]/div[1]/ul[1]/li[2]/a[1]]&#10;Session ID: 1994459179a7b0beb0c4235b61e22468" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given user login............................................................passed
+And click contactus.........................................................passed
+When enter contact..........................................................passed
+And not enter contact.......................................................failed
+Then successfuly login......................................................skipped
+
+StackTrace:
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="#">...</a> is not clickable at point (725, 37). Other element would receive the click: <div class="modal-header">...</div>
+  (Session info: chrome=107.0.5304.110)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1994459179a7b0beb0c4235b61e22468, clickElement {id=b94d2b0b-c957-4e4f-93e9-9e08b2f147b9}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.110, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /tmp/.com.google.Chrome.eF7Q9B}, goog:chromeOptions: {debuggerAddress: localhost:39503}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:39503/devtoo..., se:cdpVersion: 107.0.5304.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on LINUX (1994459179a7b0beb0c4235b61e22468)] -> xpath: /html[1]/body[1]/nav[1]/div[1]/ul[1]/li[2]/a[1]]
+Session ID: 1994459179a7b0beb0c4235b61e22468
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor54.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at pagesLocator.contactus_page.click_contact_tab(contactus_page.java:37)
+	at StepDefinitions.T05_contact.not_enter_contact(T05_contact.java:33)
+	at ✽.not enter contact(file:///home/evan/Documents/MavenProjects/testing/src/test/resource/Features/05_contactus.feature:7)
+]]></failure>
+    </testcase>
+    <testcase classname="home feature" name="home page testing" time="48.683">
+        <system-out><![CDATA[When user login.............................................................passed
+And tab home................................................................passed
+When move phone category and check..........................................passed
+And move laptop category and check..........................................passed
+When move monitor category and check........................................passed
+And check next and previous button..........................................passed
+Then check button right and left............................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="add to cart feature" name="add to cart functionality testing" time="198.917">
+        <failure message="no such alert&#10;  (Session info: chrome=107.0.5304.110)&#10;Build info: version: '4.7.2', revision: '4d4020c3b7'&#10;System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.5'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [a803cdc8380dfd4709f15e70e5579e3e, getAlertText {}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.110, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /tmp/.com.google.Chrome.9JHZq4}, goog:chromeOptions: {debuggerAddress: localhost:43325}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:43325/devtoo..., se:cdpVersion: 107.0.5304.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a803cdc8380dfd4709f15e70e5579e3e" type="org.openqa.selenium.NoAlertPresentException"><![CDATA[When user login.............................................................passed
+And tab home................................................................passed
+When move phone category and check..........................................passed
+And add phones to cart......................................................passed
+When move laptop category and check.........................................passed
+And add laptops to cart.....................................................failed
+When move monitor category and check........................................skipped
+And add monitors to cart....................................................skipped
+Then check if all items in cart.............................................skipped
+
+StackTrace:
+org.openqa.selenium.NoAlertPresentException: no such alert
+  (Session info: chrome=107.0.5304.110)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a803cdc8380dfd4709f15e70e5579e3e, getAlertText {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.110, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /tmp/.com.google.Chrome.9JHZq4}, goog:chromeOptions: {debuggerAddress: localhost:43325}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:43325/devtoo..., se:cdpVersion: 107.0.5304.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a803cdc8380dfd4709f15e70e5579e3e
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:590)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:594)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.alert(RemoteWebDriver.java:1072)
+	at pagesLocator.home_page.add_to_cart_laptops(home_page.java:65)
+	at StepDefinitions.T07_addToCart.add_laptops_to_cart(T07_addToCart.java:32)
+	at ✽.add laptops to cart(file:///home/evan/Documents/MavenProjects/testing/src/test/resource/Features/07_addToCart.feature:9)
+]]></failure>
+    </testcase>
+    <testcase classname="checkout feature" name="checkout functionality testing" time="52.913">
+        <failure message="unexpected alert open: {Alert text : Please fill out Username and Password.}&#10;  (Session info: chrome=107.0.5304.110): Please fill out Username and Password.&#10;Build info: version: '4.7.2', revision: '4d4020c3b7'&#10;System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.5'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [d0271a0b21cc428a77899f2583850c10, findElement {using=xpath, value=//a[normalize-space()='Cart']}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.110, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /tmp/.com.google.Chrome.vJ9Td9}, goog:chromeOptions: {debuggerAddress: localhost:39343}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:39343/devtoo..., se:cdpVersion: 107.0.5304.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d0271a0b21cc428a77899f2583850c10" type="org.openqa.selenium.UnhandledAlertException"><![CDATA[When user login.............................................................passed
+When user click cart........................................................failed
+And check cart items........................................................skipped
+When user click delete button...............................................skipped
+And check item deleted is gone..............................................skipped
+When user click place order button..........................................skipped
+And user not enter order data...............................................skipped
+When user order with order data.............................................skipped
+And succesfull order........................................................skipped
+Then logout.................................................................skipped
+
+StackTrace:
+org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Please fill out Username and Password.}
+  (Session info: chrome=107.0.5304.110): Please fill out Username and Password.
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d0271a0b21cc428a77899f2583850c10, findElement {using=xpath, value=//a[normalize-space()='Cart']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.110, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /tmp/.com.google.Chrome.vJ9Td9}, goog:chromeOptions: {debuggerAddress: localhost:39343}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:39343/devtoo..., se:cdpVersion: 107.0.5304.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d0271a0b21cc428a77899f2583850c10
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:131)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:343)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy24.click(Unknown Source)
+	at pagesLocator.cart_page.click_cart_tab(cart_page.java:76)
+	at StepDefinitions.T08_checkout.user_click_cart(T08_checkout.java:23)
+	at ✽.user click cart(file:///home/evan/Documents/MavenProjects/testing/src/test/resource/Features/08_checkout.feature:5)
+]]></failure>
     </testcase>
 </testsuite>

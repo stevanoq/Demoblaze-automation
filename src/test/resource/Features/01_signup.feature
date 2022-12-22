@@ -1,8 +1,8 @@
 Feature: signup popup feature
+    
     @signup
     Scenario: test popup apearnes
-        Given open browser
-        And enter url
+        
         When click signup tab
         And signin screen popup
         When click without data

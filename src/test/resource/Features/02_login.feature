@@ -1,8 +1,8 @@
 Feature: login feature
+    
     @login
     Scenario: login testing feature
-        Given open browser login
-        And goto url login
+
         When click login tab
         And click login without cridential
         When enter wrong cridential
