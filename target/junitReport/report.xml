@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="494.138">
-    <testcase classname="signup popup feature" name="test popup apearnes" time="45.558">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="8" time="308.181">
+    <testcase classname="signup popup feature" name="test popup apearnes" time="25.188">
         <system-out><![CDATA[When click signup tab.......................................................passed
 And signin screen popup.....................................................passed
 When click without data.....................................................passed
@@ -9,10 +9,9 @@ When enter data.............................................................pass
 And click signup button.....................................................passed
 When fail...................................................................passed
 And retype data.............................................................passed
-Then success................................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="login feature" name="login testing feature" time="30.287">
+    <testcase classname="login feature" name="login testing feature" time="20.803">
         <system-out><![CDATA[When click login tab........................................................passed
 And click login without cridential..........................................passed
 When enter wrong cridential.................................................passed
@@ -23,29 +22,29 @@ When enter right cridential.................................................pass
 Then success login..........................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="logout testing" name="logout fucyionality testing" time="24.311">
+    <testcase classname="logout testing" name="logout fucyionality testing" time="17.158">
         <system-out><![CDATA[When user login.............................................................passed
 And logout..................................................................passed
 Then successfuly login......................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="about us" name="test about us" time="29.11">
+    <testcase classname="about us" name="test about us" time="25.772">
         <system-out><![CDATA[When user login.............................................................passed
 And click about us tab......................................................passed
 When check close and x btn..................................................passed
 And verify video............................................................passed
-Then successfuly login......................................................passed
+Then logout.................................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="contact us" name="testing contact us function" time="50.283">
+    <testcase classname="contact us" name="testing contact us function" time="32.522">
         <system-out><![CDATA[Given user login............................................................passed
 And click contactus.........................................................passed
 When enter contact..........................................................passed
 And not enter contact.......................................................passed
-Then successfuly login......................................................passed
+Then logout.................................................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="home feature" name="home page testing" time="48.196">
+    <testcase classname="home feature" name="home page testing" time="34.543">
         <system-out><![CDATA[When user login.............................................................passed
 And tab home................................................................passed
 When move phone category and check..........................................passed
@@ -55,7 +54,7 @@ And check next and previous button..........................................pass
 Then check button right and left............................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="add to cart feature" name="add to cart functionality testing" time="201.761">
+    <testcase classname="add to cart feature" name="add to cart functionality testing" time="109.733">
         <system-out><![CDATA[When user login.............................................................passed
 And tab home................................................................passed
 When move phone category and check..........................................passed
@@ -67,47 +66,16 @@ And add monitors to cart....................................................pass
 Then check if all items in cart.............................................passed
 ]]></system-out>
     </testcase>
-    <testcase classname="checkout feature" name="checkout functionality testing" time="59.975">
-        <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//td)[60]&quot;}&#10;  (Session info: chrome=107.0.5304.110)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.7.2', revision: '4d4020c3b7'&#10;System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.5'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [cbf9a7052784341aa9175f9a4049ae27, findElement {using=xpath, value=(//td)[60]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.110, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /tmp/.com.google.Chrome.OUdnIW}, goog:chromeOptions: {debuggerAddress: localhost:35219}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:35219/devtoo..., se:cdpVersion: 107.0.5304.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: cbf9a7052784341aa9175f9a4049ae27" type="org.openqa.selenium.NoSuchElementException"><![CDATA[When user login.............................................................passed
+    <testcase classname="checkout feature" name="checkout functionality testing" time="39.62">
+        <system-out><![CDATA[When user login.............................................................passed
 When user click cart........................................................passed
 And check cart items........................................................passed
 When user click delete button...............................................passed
-And check item deleted is gone..............................................failed
-When user click place order button..........................................skipped
-And user not enter order data...............................................skipped
-When user order with order data.............................................skipped
-And succesfull order........................................................skipped
-Then logout.................................................................skipped
-
-StackTrace:
-org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//td)[60]"}
-  (Session info: chrome=107.0.5304.110)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.7.2', revision: '4d4020c3b7'
-System info: os.name: 'Linux', os.arch: 'amd64', os.version: '5.15.0-56-generic', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cbf9a7052784341aa9175f9a4049ae27, findElement {using=xpath, value=(//td)[60]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.110, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: /tmp/.com.google.Chrome.OUdnIW}, goog:chromeOptions: {debuggerAddress: localhost:35219}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: LINUX, proxy: Proxy(), se:cdp: ws://localhost:35219/devtoo..., se:cdpVersion: 107.0.5304.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: cbf9a7052784341aa9175f9a4049ae27
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:351)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:343)
-	at pagesLocator.cart_page.check_item_table(cart_page.java:61)
-	at StepDefinitions.T08_checkout.check_item_deleted_is_gone(T08_checkout.java:55)
-	at ✽.check item deleted is gone(file:///home/evan/Documents/MavenProjects/testing/src/test/resource/Features/08_checkout.feature:8)
-]]></failure>
+When user click place order button..........................................passed
+And user not enter order data...............................................passed
+When user order with order data.............................................passed
+And succesfull order........................................................passed
+Then logout.................................................................passed
+]]></system-out>
     </testcase>
 </testsuite>

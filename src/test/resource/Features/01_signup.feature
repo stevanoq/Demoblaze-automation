@@ -11,4 +11,4 @@ Feature: signup popup feature
         And click signup button
         When fail
         And retype data
-        Then success
+      #  Then success

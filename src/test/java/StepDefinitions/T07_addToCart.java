@@ -9,11 +9,10 @@ public class T07_addToCart extends variable{
     /*And add phones to cart
      * Then check if all item in cart
      */
-
      @And("add phones to cart")
-     public void add_phones_to_cart() throws InterruptedException{
-        home = new home_page(driver);
-        cart = new cart_page(driver);
+     public void add_phones_to_cart() throws InterruptedException {
+         //home = new home_page(driver, wait);
+         cart = new cart_page(driver, wait);
         home.add_to_cart_phones("Samsung galaxy s6");
         home.add_to_cart_phones("Nokia lumia 1520");
         home.add_to_cart_phones("Nexus 6");
@@ -24,7 +23,7 @@ public class T07_addToCart extends variable{
      }
 
      @And("add laptops to cart")
-     public void add_laptops_to_cart() throws InterruptedException{
+     public void add_laptops_to_cart() throws InterruptedException {
         home.add_to_cart_laptops("Sony vaio i5");
         home.add_to_cart_laptops("Sony vaio i7");
         home.add_to_cart_laptops("MacBook air");
@@ -34,13 +33,13 @@ public class T07_addToCart extends variable{
      }
 
      @And("add monitors to cart")
-     public void add_monitors_to_cart()throws InterruptedException{
+     public void add_monitors_to_cart() throws InterruptedException {
         home.add_to_cart_monitors("Apple monitor 24");
         home.add_to_cart_monitors("ASUS Full HD");
      }
 
      @Then("check if all items in cart")
-     public void check_if_all_items_in_cart() throws InterruptedException{
+     public void check_if_all_items_in_cart() {
         cart.click_cart_tab();
         cart.check_cart("Samsung galaxy s6");
         cart.check_cart("Nokia lumia 1520");

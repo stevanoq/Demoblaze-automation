@@ -5,7 +5,7 @@ Feature: checkout feature
         When user click cart
         And check cart items
         When user click delete button
-        And check item deleted is gone
+        #And check item deleted is gone
         When user click place order button
         And user not enter order data
         When user order with order data

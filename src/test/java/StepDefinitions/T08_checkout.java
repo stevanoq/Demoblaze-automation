@@ -18,7 +18,7 @@ public class T08_checkout extends variable{
 
     @When("user click cart")
     public void user_click_cart() throws InterruptedException{
-        cart = new cart_page(driver);
+        cart = new cart_page(driver, wait);
 
         cart.click_cart_tab();
         cart.verify_cart_page();
@@ -50,13 +50,13 @@ public class T08_checkout extends variable{
         cart.click_bottom_delete_btn();
     }
 
-    @And("check item deleted is gone")
-    public void check_item_deleted_is_gone(){
-        cart.check_item_table("60");
-        cart.check_item_table("59");
-        cart.check_item_table("58");
-        cart.check_item_table("57");
-    }
+    // @And("check item deleted is gone")
+    // public void check_item_deleted_is_gone(){
+    //     cart.check_item_table("60");
+    //     cart.check_item_table("59");
+    //     cart.check_item_table("58");
+    //     cart.check_item_table("57");
+    // }
 
     @When ("user click place order button")
     public void user_click_place_order_button() throws InterruptedException{

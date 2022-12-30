@@ -10,14 +10,13 @@ public class T05_contact extends variable{
         And not enter contact */
 
     @And("click contactus")
-    public void click_contactus() throws InterruptedException{
-        contact = new contactus_page(driver);
-        Thread.sleep(1000);
+    public void click_contactus() {
+        contact = new contactus_page(driver, wait);
         contact.click_contact_tab();
     }
 
     @When("enter contact")
-    public void enter_contact() throws InterruptedException{
+    public void enter_contact() {
         contact.input_email_contact();
         contact.input_name_contact();
         contact.input_message();
@@ -27,15 +26,13 @@ public class T05_contact extends variable{
     }
 
     @And("not enter contact")
-    public void not_enter_contact() throws InterruptedException{
+    public void not_enter_contact() {
         contact.click_contact_btn();
         contact.alert_accept_contact();
         contact.click_contact_tab();
         contact.input_email_contact();
         contact.click_close_btn_contact();
-        Thread.sleep(1000);
         contact.click_contact_tab();
-        Thread.sleep(1000);
         contact.click_contact_btn();
         contact.alert_accept_contact();
     }

@@ -1,5 +1,6 @@
 package StepDefinitions;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -9,6 +10,7 @@ import org.openqa.selenium.By.ById;
 import org.openqa.selenium.By.ByName;
 import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -16,9 +18,12 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pagesLocator.cart_page;
+import pagesLocator.home_page;
 import pagesLocator.signup_page;
 
 public class T01_signup extends variable{
+    // WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     //signup_page signup;
     /*Given open browser
         And enter url
@@ -26,21 +31,23 @@ public class T01_signup extends variable{
         Then sigin screen popup */
     //@Given("open browser")
     @Before
-    public void open_browser(){
+    public void open_browser() throws InterruptedException{
         System.setProperty("webdriver.chrome.driver", "/home/evan/Documents/MavenProjects/testing/src/test/resource/Drivers/chromedriver");
         driver = new ChromeDriver();
+        wait = new WebDriverWait(driver, Duration.ofSeconds(40));
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.navigate().to("https://www.demoblaze.com/");
+       
+        Thread.sleep(1000);
     }
 
     @When("click signup tab")
-    public void click_signup_tab() throws InterruptedException{
-        signup = new signup_page(driver);
+    public void click_signup_tab() {
+        signup = new signup_page(driver, wait);
         signup.click_sigup_tab();
         signup.click_sigup_closeButton();
-        //driver.findElement(ByName.id("signin2")).isDisplayed();
         signup.click_sigup_tab();
         signup.click_sigup_xButton();
         //driver.findElement(ByName.id("signin2")).isDisplayed();
@@ -53,14 +60,13 @@ public class T01_signup extends variable{
     }
 
     @When("click without data")
-    public void click_without_data() throws InterruptedException{
+    public void click_without_data() {
         signup.click_sigup_button();
-        Thread.sleep(2000);
     }
 
     @And("accept the alert")
     public void accept_the_alert(){
-        signup.signup_alert_accept();
+        signup.signup_alert_accept("Please fill out Username and Password.");
     }
 
     @When("enter data")
@@ -70,32 +76,27 @@ public class T01_signup extends variable{
     }
 
     @And("click signup button")
-    public void click_signup_button() throws InterruptedException{
+    public void click_signup_button() {
         signup.click_sigup_button();
-        Thread.sleep(2000);
     }
 
     @When("fail")
-    public void fail() throws InterruptedException{
-        String txt=driver.switchTo().alert().getText().toString();
-        System.out.println(txt);
-        signup.signup_alert_accept();
+    public void fail() {
+        signup.signup_alert_accept("This user already exist.");
     }
 
     @And("retype data")
-    public void retype_data() throws InterruptedException{
+    public void retype_data() {
         driver.findElement(ById.id("sign-username")).clear();
         driver.findElement(ById.id("sign-password")).clear();
-        Thread.sleep(2000);
         signup.enter_sigup_newname();
         signup.enter_sigup_password();
     }
 
     @Then("success")
-    public void success() throws InterruptedException{
+    public void success() {
         signup.click_sigup_button();
-        Thread.sleep(2000);
-        signup.signup_alert_accept();
+        signup.signup_alert_accept("Sign up successful.");
         
     }
 

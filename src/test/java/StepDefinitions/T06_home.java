@@ -17,14 +17,14 @@ public class T06_home extends variable{
         Then back to home */
 
         @And("tab home")
-        public void tab_home() throws InterruptedException{
-            home = new home_page(driver);
-            Thread.sleep(2000);
+        public void tab_home() throws InterruptedException {
+            home = new home_page(driver, wait);
             home.click_home_tab();
         }
 
         @When("move phone category and check")
         public void move_phone_category_and_check() throws InterruptedException{
+          //  Thread.sleep(2000);
             home.click_phone();
             home.check_phone_name("Samsung galaxy s6");
             home.check_phone_name("Nokia lumia 1520");

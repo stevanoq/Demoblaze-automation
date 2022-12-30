@@ -14,15 +14,13 @@ public class T04_aboutus extends variable{
     When check close and x btn
     Then verify video */
     @And ("click about us tab")
-    public void click_about_us_tab() throws InterruptedException{
-        aboutus = new aboutus_page(driver);
-        Thread.sleep(1000);
+    public void click_about_us_tab() throws InterruptedException {
+        aboutus = new aboutus_page(driver, wait);
         aboutus.taping_aboutus();
-        
     }
 
     @When("check close and x btn")
-    public void check_close_and_x_tn() throws InterruptedException{
+    public void check_close_and_x_tn() throws InterruptedException {
         aboutus.verify_aboutus();
         aboutus.click_close_btn_aboutus();
         aboutus.taping_aboutus();
@@ -33,7 +31,7 @@ public class T04_aboutus extends variable{
     }
 
     @And("verify video")
-    public void verify_video() throws InterruptedException{
+    public void verify_video() {
         aboutus.verify_aboutus_vid();
         aboutus.click_x_btn_aboutus();
     }

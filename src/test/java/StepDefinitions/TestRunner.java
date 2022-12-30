@@ -10,7 +10,7 @@ monochrome = true,
 plugin = {"pretty", "junit:target/junitReport/report.xml",
             "json:target/jsonreport/report.json",
             "html:target/htmlreport/report.html"}
-//tags = "@checkout"
+// ,tags = "@checkout"
 )
 public class TestRunner{
 

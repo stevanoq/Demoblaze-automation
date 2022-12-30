@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pagesLocator.aboutus_page;
 import pagesLocator.cart_page;
@@ -12,6 +13,7 @@ import pagesLocator.signup_page;
 
 public class variable {
     public static WebDriver driver;
+    public static WebDriverWait wait;
 
     static login_page login;
     static logout_pf logout; 

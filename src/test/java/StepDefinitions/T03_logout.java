@@ -2,13 +2,16 @@ package StepDefinitions;
 
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pagesLocator.home_page;
 import pagesLocator.logout_pf;
 
 public class T03_logout extends variable{
@@ -20,15 +23,16 @@ public class T03_logout extends variable{
         Then logout */
 
         @When("user login")
-        public void user_login() throws InterruptedException{
-            logout = new logout_pf(driver);
+        public void user_login() {
+            logout = new logout_pf(driver, wait);
+            home = new home_page(driver, wait);
 
             logout.click_logout_in_tab();
             logout.enter_username_logout();
             logout.enter_password_logout();
             logout.click_logout_in_btn();
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nameofuser")));
 
-            Thread.sleep(5000);
         }
 
         @And("logout")

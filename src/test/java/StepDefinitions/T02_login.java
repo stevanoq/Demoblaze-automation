@@ -1,12 +1,16 @@
 package StepDefinitions;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.By.ById;
 import org.openqa.selenium.By.ByXPath;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -42,28 +46,21 @@ public class T02_login extends variable{
     public void goto_url_login() {
         driver.navigate().to("https://www.demoblaze.com/");
     } */
-
+    
     @When("click login tab")
-    public void click_login_tab() throws InterruptedException {
-        login = new login_page(driver);
-
+    public void click_login_tab() {
+        login = new login_page(driver, wait);
         login.click_login_tab();
-        Thread.sleep(1000);
         login.click_btn_close();
-        Thread.sleep(1000);
         login.click_login_tab();
-        Thread.sleep(1000);
         login.click_btn_x();
-        Thread.sleep(1000);
         login.click_login_tab();
     }
 
     @And("click login without cridential")
-    public void click_login_without_cridential() throws InterruptedException {
+    public void click_login_without_cridential() {
         login.click_btn_login();
-        Thread.sleep(2000);
-        login.alert_oke();
-        Thread.sleep(1000);
+        login.alert_oke("Please fill out Username and Password.");
     }
 
     @When("enter wrong cridential")
@@ -73,11 +70,9 @@ public class T02_login extends variable{
     }
 
     @And("fail login")
-    public void fail_login() throws InterruptedException {
+    public void fail_login() {
         login.click_btn_login();
-        Thread.sleep(2000);
-        login.alert_oke();
-        Thread.sleep(1000);
+        login.alert_oke("Wrong password.");
     }
 
     @When("not enter password")
@@ -86,11 +81,9 @@ public class T02_login extends variable{
     }
 
     @And("fail login1")
-    public void fail_login1() throws InterruptedException {
+    public void fail_login1() {
         login.click_btn_login();
-        Thread.sleep(2000);
-        login.alert_oke();
-        Thread.sleep(1000);
+        login.alert_oke("Please fill out Username and Password.");
     }
 
     @When("enter right cridential")
@@ -102,8 +95,6 @@ public class T02_login extends variable{
     @Then("success login")
     public void success_login() {
         driver.findElement(By.id("nameofuser")).isDisplayed();
-        // driver.close();
-        // driver.quit();
     }
 
     
